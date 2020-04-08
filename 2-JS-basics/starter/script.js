@@ -91,7 +91,7 @@ Mark and John are trying to compare their BMI (Body Mass Index), which is calcul
 GOOD LUCK 😀
 */
 
-// var massMark = 78; // kg
+// var massMark = 60; // kg
 // var heightMark = 1.69; // meters
 
 // var massJohn = 92;
@@ -104,14 +104,46 @@ GOOD LUCK 😀
 
 // var BMIMarkHigher = BMIMark > BMIJohn;
 
-// console.log(
-//   "Mark's BMI is " +
-//     BMIMark +
-//     " and John's BMI is " +
-//     BMIJohn +
-//     ". Is Mark's higher than John's? " +
-//     BMIMarkHigher
-// );
+// console.log(BMIMark, BMIJohn);
+
+// console.log("Is Mark's higher than John's? " + BMIMarkHigher);
+
+// if (BMIMark > BMIJohn) {
+//   console.log("Mark's BMI is higher than Mark's");
+// } else if (BMIJohn > BMIMark) {
+//   console.log("John's BMI is higher than Mark's");
+// }
+
+// ############################################
+// Lecture # 14 If / Else Statements and Boolean Logic
+// ********************************************
+
+// var firstName = 'John';
+// var civilStatus = 'single';
+
+// if (civilStatus === 'married') {
+//   console.log(firstName + ' is married!');
+// } else {
+//   console.log(firstName + ' is not married!');
+// }
+
+// var isMarried = true;
+// if (isMarried) {
+//   console.log(firstName + ' is married!');
+// } else {
+//   console.log(firstName + ' is not married!');
+// }
+
+// var firstName = 'John';
+// var age = 12;
+
+// if (age < 13) {
+//   console.log(firstName + ' is a boy.');
+// } else if (age >= 13 && age < 20) {
+//   console.log(firstName + ' is a teenager.');
+// } else {
+//   console.log(firstName + ' is a man.');
+// }
 
 // ############################################
 // Lecture #
