@@ -281,6 +281,50 @@ GOOD LUCK 😀
 // // Statements dont produce immediate values by themselves
 
 // ############################################
+// Lecture # 22      Arrays
+// ********************************************
+
+// var names = ['John', 'Mark', 'Jane'];
+// var years = new Array(1990, 1969, 1948);
+
+// console.log(names[0]);
+// console.log(names);
+// console.log(names.length);
+
+// names[1] = 'Ben';
+// console.log(names[1]);
+
+// names[5] = 'Mary';
+// console.log(names[4]);
+// console.log(names);
+
+// // Different data types
+// var john = ['John', 'Smith', 1990, 'teacher', false];
+
+// john.push('blue');
+// console.log(john);
+
+// john.unshift('Mr.');
+// console.log(john);
+
+// john.pop();
+// console.log(john);
+
+// console.log(john.lastIndexOf(1990));
+
+// console.log(john.indexOf('designer'));
+// // negative value shows that it doesn't exist in array
+
+// john[3] = 'designer';
+
+// var isDesigner =
+//   john.indexOf('designer') === -1
+//     ? 'John is not a designer'
+//     : 'John is a designer';
+
+// console.log(isDesigner);
+
+// ############################################
 // Lecture #
 // ********************************************
 
