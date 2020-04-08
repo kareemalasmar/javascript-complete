@@ -245,6 +245,42 @@ GOOD LUCK 😀
 // }
 
 // ############################################
+// Lecture # 20 Functions, Expressions and statements
+// ********************************************
+
+// function calculateAge(birthYear) {
+//   return 2020 - birthYear;
+// }
+
+// console.log(calculateAge(1992));
+// console.log(calculateAge(1996));
+
+// function yearsUntilRetirement(birthYear, firstName) {
+//   var age = calculateAge(birthYear);
+//   var retirement = 65 - age;
+//   if (retirement > 0) {
+//     console.log(firstName + ' retires in ' + retirement + ' years.');
+//   } else {
+//     console.log(firstName + ' is already retired.');
+//   }
+// }
+
+// yearsUntilRetirement(1990, 'John');
+// yearsUntilRetirement(1994, 'Mike');
+// yearsUntilRetirement(1948, 'Mary');
+
+// // Function Expression
+// var whatDoYouDo = function (job, firstName) {
+//   return firstName + ' is a professional ' + job;
+// };
+
+// console.log(whatDoYouDo('teacher', 'John'));
+
+// // Expressions always return a value
+// // Anytime a value is expected we use an expression
+// // Statements dont produce immediate values by themselves
+
+// ############################################
 // Lecture #
 // ********************************************
 
