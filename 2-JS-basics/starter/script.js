@@ -369,24 +369,43 @@ GOOD LUCK 😀
 // Lecture # 25 Objects and Properties
 // ********************************************
 
+// var john = {
+//   firstName: 'John',
+//   lastName: 'Smith',
+//   birthYear: 1990,
+//   family: ['Jane', 'Mark', 'Bob', 'Emily'],
+//   job: 'teacher',
+//   isMarried: false,
+// };
+
+// console.log(john);
+// console.log(john['family']);
+// console.log(john.family[1]);
+
+// var jane = new Object();
+// (jane.firstName = 'Jane'), (jane.birthYear = 1969);
+// jane['lastName'] = 'Smith';
+
+// console.log(jane);
+
+// ############################################
+// Lecture # 26      Methods and 'this'
+// ********************************************
+
 var john = {
   firstName: 'John',
   lastName: 'Smith',
-  birthYear: 1990,
+  birthYear: 1992,
   family: ['Jane', 'Mark', 'Bob', 'Emily'],
   job: 'teacher',
   isMarried: false,
+  calcAge: function () {
+    this.age = 2020 - this.birthYear;
+  },
 };
 
+john.calcAge();
 console.log(john);
-console.log(john['family']);
-console.log(john.family[1]);
-
-var jane = new Object();
-(jane.firstName = 'Jane'), (jane.birthYear = 1969);
-jane['lastName'] = 'Smith';
-
-console.log(jane);
 
 // ############################################
 // Lecture #
