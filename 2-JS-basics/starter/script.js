@@ -392,20 +392,68 @@ GOOD LUCK 😀
 // Lecture # 26      Methods and 'this'
 // ********************************************
 
-var john = {
-  firstName: 'John',
-  lastName: 'Smith',
-  birthYear: 1992,
-  family: ['Jane', 'Mark', 'Bob', 'Emily'],
-  job: 'teacher',
-  isMarried: false,
-  calcAge: function () {
-    this.age = 2020 - this.birthYear;
-  },
-};
+// var john = {
+//   firstName: 'John',
+//   lastName: 'Smith',
+//   birthYear: 1992,
+//   family: ['Jane', 'Mark', 'Bob', 'Emily'],
+//   job: 'teacher',
+//   isMarried: false,
+//   calcAge: function () {
+//     this.age = 2020 - this.birthYear;
+//   },
+// };
 
-john.calcAge();
-console.log(john);
+// john.calcAge();
+// console.log(john);
+
+// ############################################
+// Lecture # 27     Coding Challenge 4
+// ********************************************
+
+/*
+Let's remember the first coding challenge where Mark and John compared their BMIs. Let's now implement the same functionality with objects and methods.
+1. For each of them, create an object with properties for their full name, mass, and height
+2. Then, add a method to each object to calculate the BMI. Save the BMI to the object and also return it from the method.
+3. In the end, log to the console who has the highest BMI, together with the full name and the respective BMI. Don't forget they might have the same BMI.
+
+Remember: BMI = mass / height^2 = mass / (height * height). (mass in kg and height in meter).
+
+GOOD LUCK 😀
+*/
+
+// var mark = {
+//   fullName: 'Mark Frost',
+//   mass: 78,
+//   height: 1.69,
+//   calcBMI: function () {
+//     this.BMI = this.mass / this.height ** 2;
+//     return this.BMI;
+//   },
+// };
+
+// var john = {
+//   fullName: 'John Smith',
+//   mass: 92,
+//   height: 1.95,
+//   calcBMI: function () {
+//     this.BMI = this.mass / this.height ** 2;
+//     return this.BMI;
+//   },
+// };
+
+// mark.calcBMI();
+// john.calcBMI();
+// console.log(mark);
+// console.log(john);
+
+// if (mark.BMI > john.BMI) {
+//   console.log(mark.fullName + ' has the higher BMI.');
+// } else if (mark.BMI < john.BMI) {
+//   console.log(john.fullName + ' has the higher BMI.');
+// } else {
+//   console.log('Mark and John have the same BMI');
+// }
 
 // ############################################
 // Lecture #
