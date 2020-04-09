@@ -342,28 +342,51 @@ In the end, John would like to have 2 arrays:
 GOOD LUCK 😀
 */
 
-var bills = [124, 48, 268];
-var totals = [];
+// var bills = [124, 48, 268];
+// var totals = [];
 
-function calculateTotal(bill) {
-  var tip, total;
-  if (bill < 50) {
-    tip = 0.2;
-  } else if (bill >= 50 && bill < 200) {
-    tip = 0.15;
-  } else {
-    tip = 0.1;
-  }
-  total = bill + bill * tip;
+// function calculateTotal(bill) {
+//   var tip, total;
+//   if (bill < 50) {
+//     tip = 0.2;
+//   } else if (bill >= 50 && bill < 200) {
+//     tip = 0.15;
+//   } else {
+//     tip = 0.1;
+//   }
+//   total = bill + bill * tip;
 
-  totals.push(total);
-}
+//   totals.push(total);
+// }
 
-calculateTotal(124);
-calculateTotal(48);
-calculateTotal(268);
+// calculateTotal(124);
+// calculateTotal(48);
+// calculateTotal(268);
 
-console.log(bills, totals);
+// console.log(bills, totals);
+
+// ############################################
+// Lecture # 25 Objects and Properties
+// ********************************************
+
+var john = {
+  firstName: 'John',
+  lastName: 'Smith',
+  birthYear: 1990,
+  family: ['Jane', 'Mark', 'Bob', 'Emily'],
+  job: 'teacher',
+  isMarried: false,
+};
+
+console.log(john);
+console.log(john['family']);
+console.log(john.family[1]);
+
+var jane = new Object();
+(jane.firstName = 'Jane'), (jane.birthYear = 1969);
+jane['lastName'] = 'Smith';
+
+console.log(jane);
 
 // ############################################
 // Lecture #
