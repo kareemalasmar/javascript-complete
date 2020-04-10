@@ -1,25 +1,35 @@
 ///////////////////////////////////////
 // Lecture: Hoisting
 
+// Function declaration is hoisted and will work
+// calculateAge(1992);
 
+// Function expression is a variable so it is not hoisted and won't work
+// retirement(1992);
 
+// function calculateAge(year) {
+//   console.log(2020 - year);
+// }
 
+// var retirement = function (year) {
+//   console.log(65 - (2020 - year));
+// };
 
+// Variables are not hoisted, remain undefined if called before defining
+// console.log(age);
+// var age = 23;
+// console.log(age);
 
+// function foo() {
+//   var age = 65;
+//   console.log(age);
+// }
 
-
-
-
-
-
-
-
-
-
+// foo();
+// console.log(age);
 
 ///////////////////////////////////////
 // Lecture: Scoping
-
 
 // First scoping example
 
@@ -37,8 +47,6 @@ function first() {
     }
 }
 */
-
-
 
 // Example to show the differece between execution stack and scope chain
 
@@ -62,16 +70,5 @@ function third() {
 }
 */
 
-
-
 ///////////////////////////////////////
 // Lecture: The this keyword
-
-
-
-
-
-
-
-
-
