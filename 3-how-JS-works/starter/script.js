@@ -68,3 +68,39 @@
 
 ///////////////////////////////////////
 // Lecture: The this keyword
+
+// console.log(this);
+
+// calculateAge(1992);
+
+// function calculateAge(year) {
+//   console.log(2020 - year);
+//   console.log(this);
+// }
+
+// var john = {
+//   name: 'John',
+//   birthYear: 1990,
+//   calcAge: function () {
+//     console.log(this);
+//     console.log(2020 - this.birthYear);
+
+//     function innerFunction() {
+//       // Points to window object and not john object becuase it is an expression not a declaration
+//       console.log(this);
+//     }
+//     innerFunction();
+//   },
+// };
+
+// john.calcAge();
+
+// This variable is assigned a value only after it is called
+
+// var mike = {
+//   name: 'Mike',
+//   birthYear: 1986,
+// };
+
+// mike.calcAge = john.calcAge;
+// mike.calcAge();
