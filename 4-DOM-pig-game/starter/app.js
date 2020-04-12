@@ -12,7 +12,7 @@ GAME RULES:
 var scores, roundScore, activePlayer;
 
 scores = [0, 0];
-rounScore = 0;
+roundScore = 0;
 activePlayer = 0;
 
 // change text content of html element
