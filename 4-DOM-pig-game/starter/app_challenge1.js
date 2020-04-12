@@ -11,6 +11,9 @@ GAME RULES:
 
 var scores, roundScore, activePlayer, gamePlaying;
 
+// Second Dice Challenge 1
+var previousDice;
+
 init();
 // scores = [0, 0];
 // roundScore = 0;
@@ -46,16 +49,26 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
     diceDOM.style.display = 'block';
     diceDOM.src = 'dice-' + dice + '.png';
 
-    // 3. Update the round IF the rolled number was not a 1
-    if (dice !== 1) {
-      // Add Score
-      roundScore += dice;
-      document.querySelector(
-        '#current-' + activePlayer
-      ).textContent = roundScore;
-    } else {
-      // Next Player
+    // Check if a 6 was rolled twice
+    if (dice === 6 && previousDice === 6) {
+      // Reset players score and end turn
+      scores[activePlayer] = 0;
+      document.querySelector('#score-' + activePlayer).textContent =
+        scores[activePlayer];
       nextPlayer();
+    } else {
+      // 3. Update the round IF the rolled number was not a 1
+      if (dice !== 1) {
+        // Add Score
+        roundScore += dice;
+        document.querySelector(
+          '#current-' + activePlayer
+        ).textContent = roundScore;
+        previousDice = dice;
+      } else {
+        // Next Player
+        nextPlayer();
+      }
     }
   }
 });
@@ -70,7 +83,7 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
       scores[activePlayer];
 
     // Check if player won the game
-    if (scores[activePlayer] >= 20) {
+    if (scores[activePlayer] >= 100) {
       document.querySelector('#name-' + activePlayer).textContent = 'Winner';
       document.querySelector('.dice').style.display = 'none';
       document
@@ -88,6 +101,7 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
 });
 
 function nextPlayer() {
+  previousDice = 0;
   activePlayer === 0 ? (activePlayer = 1) : (activePlayer = 0);
   roundScore = 0;
   document.getElementById('current-0').textContent = '0';
@@ -110,6 +124,7 @@ function init() {
   scores = [0, 0];
   roundScore = 0;
   activePlayer = 0;
+  previousDice = 0;
 
   document.querySelector('.dice').style.display = 'none';
 
