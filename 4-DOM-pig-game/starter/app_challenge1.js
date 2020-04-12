@@ -11,10 +11,11 @@ GAME RULES:
 
 var scores, roundScore, activePlayer, gamePlaying;
 
+init();
+
 // Second Dice Challenge 1
 var previousDice;
 
-init();
 // scores = [0, 0];
 // roundScore = 0;
 // activePlayer = 0;
