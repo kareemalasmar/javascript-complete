@@ -57,32 +57,69 @@
 // Lecture # 63         Object.create method
 // **********************************************************
 
-var personProto = {
-  // variable isnt capitalized because it is not a function constructor
-  calculateAge: function () {
-    console.log(2020 - this.yearOfBirth);
-  },
-};
+// var personProto = {
+//   // variable isnt capitalized because it is not a function constructor
+//   calculateAge: function () {
+//     console.log(2020 - this.yearOfBirth);
+//   },
+// };
 
-var john = Object.create(personProto);
+// var john = Object.create(personProto);
 
-john.name = 'John';
-john.yearOfBirth = 1990;
-john.job = 'teacher';
+// john.name = 'John';
+// john.yearOfBirth = 1990;
+// john.job = 'teacher';
 
-console.log(john);
+// console.log(john);
 
-var jane = Object.create(personProto, {
-  name: { value: 'Jane' },
-  yearOfBirth: { value: 1969 },
-  job: { value: 'designer' },
-});
+// var jane = Object.create(personProto, {
+//   name: { value: 'Jane' },
+//   yearOfBirth: { value: 1969 },
+//   job: { value: 'designer' },
+// });
 
-console.log(jane);
+// console.log(jane);
 
 // ##########################################################
-// Lecture #
+// Lecture # 64         Primitives and Objects
 // **********************************************************
+
+// // Primitives
+// var a = 23;
+// var b = a;
+// a = 46;
+// console.log(a);
+// console.log(b);
+
+// // Objects
+// var obj1 = {
+//   name: 'John',
+//   age: 30,
+// };
+
+// var obj2 = obj1;
+
+// obj1.age = 34;
+// console.log(obj1.age);
+// console.log(obj2.age);
+
+// Functions
+// var age = 27;
+// var obj = {
+//   name: 'Jonas',
+//   city: 'Libson',
+// };
+
+// function change(a, b) {
+//   a = 30;
+//   b.city = 'San Francisco';
+//   console.log(a);
+// }
+
+// change(age, obj);
+
+// console.log(age);
+// console.log(obj.city);
 
 // ##########################################################
 // Lecture #
