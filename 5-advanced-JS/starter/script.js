@@ -190,8 +190,27 @@
 // interviewQuestion('teacher')('Mark');
 
 // ##########################################################
-// Lecture #
+// Lecture # 67   Immediatley Invoked Function Expression (IIFE)
 // **********************************************************
+
+// function game() {
+//   var score = Math.random() * 10;
+//   console.log(score >= 5);
+// }
+
+// game();
+
+// // IIFE can only be called once
+// (function () {
+//   var score = Math.random() * 10;
+//   console.log(score >= 5);
+// })();
+
+// // With argument
+// (function (goodLuck) {
+//   var score = Math.random() * 10;
+//   console.log(score >= 5 - goodLuck);
+// })(5);
 
 // ##########################################################
 // Lecture #
