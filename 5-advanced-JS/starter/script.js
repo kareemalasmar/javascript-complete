@@ -126,3 +126,64 @@
 // **********************************************************
 
 // ##########################################################
+// Lecture #
+// **********************************************************
+
+// ##########################################################
+// Extra Work
+// **********************************************************
+
+// function simplest(string) {
+//   var characters = string.split('');
+//   for (var i = 0; i < characters.length; i++) {
+//     if (characters.indexOf(characters[i]) !== i) {
+//       console.log(characters[i]);
+//       break;
+//     } else if (i === characters.length - 1) {
+//       console.log('none');
+//     }
+//   }
+// }
+
+// simplest('abcd');
+
+// 1
+
+// var myArray = ['a', 'b', 'c', 'd'];
+
+// // ES5
+// // myArray.push('end');
+// // myArray.unshift('start');
+// // console.log(myArray);
+
+// // ES6
+// // myArray = ['start', ...myArray];
+// // console.log(myArray);
+// // myArray = [...myArray, 'end'];
+// // console.log(myArray);
+// myArray = ['start', ...myArray, 'end'];
+// console.log(myArray);
+
+// Private variab;e in js
+
+// function secretVar() {
+//   var private = 'top-secret-code';
+//   return function () {
+//     return private;
+//   };
+// }
+
+// var getPrivateVar = secretVar();
+
+// console.log(getPrivateVar());
+
+// var x = true;
+// var y = 4;
+// var z = 'string';
+
+// console.log(typeof x);
+// console.log(typeof y);
+// console.log(typeof z);
+// console.log(z);
+
+// ##########################################################
