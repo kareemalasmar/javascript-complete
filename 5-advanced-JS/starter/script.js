@@ -258,6 +258,111 @@
 // interviewQuestion('teacher')('Mark');
 
 // ##########################################################
+// Lecture # 69 Bind this
+// **********************************************************
+
+// var john = {
+//   name: 'John',
+//   age: 30,
+//   job: 'teacher',
+//   presentation: function (style, timeOfDay) {
+//     if (style === 'formal') {
+//       console.log(
+//         'Good ' +
+//           timeOfDay +
+//           ", Ladies and Gentlemen! I'm " +
+//           this.name +
+//           ", I'm a " +
+//           this.job +
+//           ' and I am ' +
+//           this.age +
+//           ' years old.'
+//       );
+//     }
+//     if (style === 'friendly') {
+//       console.log(
+//         "Hey! What's up? I'm " +
+//           this.name +
+//           '. I am a ' +
+//           this.job +
+//           ' and I am ' +
+//           this.age +
+//           ' years old. Have a nice ' +
+//           timeOfDay +
+//           '!'
+//       );
+//     }
+//   },
+// };
+
+// var emily = {
+//   name: 'Emily',
+//   age: 35,
+//   job: 'designer',
+// };
+
+// john.presentation('friendly', 'night');
+
+// // Method Borrowing with Call Method
+// // First argument sets the this variable for the method
+// john.presentation.call(emily, 'formal', 'morning');
+
+// // This wont work because method doesn't expect array as argument.
+// // john.presentation.apply(emily, ['friendly', 'evening'])
+
+// var johnFriendly = john.presentation.bind(john, 'friendly');
+
+// johnFriendly('mid morning');
+// johnFriendly('afternoon');
+
+// var emilyFormal = john.presentation.bind(emily, 'formal');
+
+// emilyFormal('night');
+
+// console.log('-------------------------------------------------');
+
+// // // Functions as arguments
+// var years = [1990, 1965, 1973, 1989, 2006];
+
+// function arrayCalc(arr, fn) {
+//   var arrRes = [];
+//   for (var i = 0; i < arr.length; i++) {
+//     arrRes.push(fn(arr[i]));
+//   }
+//   return arrRes;
+// }
+
+// function calculateAge(el) {
+//   return 2020 - el;
+// }
+
+// function maxHeartRate(el) {
+//   if (el >= 18 && el <= 81) {
+//     return Math.round(206.9 - 0.67 * el);
+//   } else {
+//     return -1;
+//   }
+// }
+
+// function isFullAge(limit, el) {
+//   return el >= limit;
+// }
+
+// var ages = arrayCalc(years, calculateAge);
+
+// var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
+
+// console.log(ages);
+// console.log(fullJapan);
+
+// ##########################################################
+// Lecture #
+// **********************************************************
+// ##########################################################
+// Lecture #
+// **********************************************************
+
+// ##########################################################
 // Extra Work
 // **********************************************************
 
