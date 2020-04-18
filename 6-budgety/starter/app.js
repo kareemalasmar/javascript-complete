@@ -71,7 +71,7 @@ var UIController = (function () {
       return {
         type: document.querySelector(DOMstrings.inputType).value, // Will be either inc or exp
         description: document.querySelector(DOMstrings.inputDescription).value,
-        value: document.querySelector(DOMstrings.inputValue).value,
+        value: parseFloat(document.querySelector(DOMstrings.inputValue).value),
       };
     },
 
@@ -99,15 +99,21 @@ var UIController = (function () {
 
     clearFields: function () {
       var fields, fieldsArr;
+
+      // Store selected html elements in variable
       fields = document.querySelectorAll(
         DOMstrings.inputDescription + ', ' + DOMstrings.inputValue
       );
 
+      // Make an array from fields
       fieldsArr = Array.prototype.slice.call(fields);
 
+      // Set the value for each input to blank
       fieldsArr.forEach(function (current, index, array) {
         current.value = '';
       });
+
+      // Focus cursor back to description input
       fieldsArr[0].focus();
     },
     // Expose private DOMstrings to public through a method
@@ -135,6 +141,12 @@ var controller = (function (budgetCtrl, UICtrl) {
     });
   };
 
+  var updateBudget = function () {
+    // 1. Calculate new budget
+    // 2. return the budget
+    // 3. Display new budget
+  };
+
   // Add item function
   var ctrlAddItem = function () {
     var input, newItem;
@@ -145,17 +157,25 @@ var controller = (function (budgetCtrl, UICtrl) {
     // Destructure
     var { type, description, value } = input;
 
-    // 2. Add it to budget controller
-    newItem = budgetCtrl.addItem(type, description, value);
+    // check if input fields are filled
+    if (description !== '' && !isNaN(value) && value > 0) {
+      // 2. Add it to budget controller
+      newItem = budgetCtrl.addItem(type, description, value);
 
-    // 3. Display new item to UI
+      // 3. Display new item to UI
 
-    UICtrl.addListItem(newItem, type);
+      UICtrl.addListItem(newItem, type);
 
-    // 4. Clear fields
-    UICtrl.clearFields();
-    // 5. Calculate new budget
-    // 6. Display new budget
+      // 4. Clear fields
+      UICtrl.clearFields();
+
+      // 5. Calculate and update budget
+      updateBudget();
+
+      // 6. DIsplay new budget
+    } else {
+      alert('Please enter a description and value');
+    }
   };
 
   return {
