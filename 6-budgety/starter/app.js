@@ -103,6 +103,7 @@ var UIController = (function () {
     incomeLabel: '.budget__income--value',
     expensesLabel: '.budget__expenses--value',
     percentage: '.budget__expenses--percentage',
+    container: '.container',
   };
 
   return {
@@ -121,11 +122,11 @@ var UIController = (function () {
       if (type === 'inc') {
         element = DOMstrings.incomeContainer;
         html =
-          '<div class="item clearfix" id="income-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value"> + %value%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+          '<div class="item clearfix" id="inc-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value"> + %value%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
       } else if (type === 'exp') {
         element = DOMstrings.expensesContainer;
         html =
-          '<div class="item clearfix" id="expense-%id%"><div class="item__description">%description%</div><div class="right clearfix"> <div class="item__value">- %value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+          '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description%</div><div class="right clearfix"> <div class="item__value">- %value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
       }
 
       // Replace placeholder text with data
@@ -196,6 +197,11 @@ var controller = (function (budgetCtrl, UICtrl) {
         ctrlAddItem();
       }
     });
+
+    // Add event listener to delete budget items, using delegation
+    document
+      .querySelector(DOM.container)
+      .addEventListener('click', ctrlDeleteItem);
   };
 
   var updateBudget = function () {
@@ -238,6 +244,26 @@ var controller = (function (budgetCtrl, UICtrl) {
     } else {
       alert('Please enter a description and value');
     }
+  };
+
+  var ctrlDeleteItem = function (event) {
+    var itemID, splitID, type, ID;
+
+    // Traversing html elements to target ID property of specific budget item
+    itemID = event.target.parentNode.parentNode.parentNode.parentNode.id;
+    // Check if element clicked has ID property
+    if (itemID) {
+      //inc-1
+      splitID = itemID.split('-');
+      type = splitID[0];
+      ID = splitID[1];
+    }
+
+    // 1. Delete item from data structure
+
+    // 2. Delete the item from the UI
+
+    // 3. Update ad show the new bduget
   };
 
   return {
