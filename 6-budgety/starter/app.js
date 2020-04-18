@@ -149,6 +149,7 @@ var UIController = (function () {
     expensesLabel: '.budget__expenses--value',
     percentage: '.budget__expenses--percentage',
     container: '.container',
+    expensesPercLabel: '.item__percentage',
   };
 
   return {
@@ -171,7 +172,7 @@ var UIController = (function () {
       } else if (type === 'exp') {
         element = DOMstrings.expensesContainer;
         html =
-          '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description%</div><div class="right clearfix"> <div class="item__value">- %value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+          '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description%</div><div class="right clearfix"> <div class="item__value">- %value%</div><div class="item__percentage">--%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
       }
 
       // Replace placeholder text with data
@@ -224,7 +225,27 @@ var UIController = (function () {
       }
     },
 
-    displayPercentages: function (percentages) {},
+    displayPercentages: function (percentages) {
+      var fields = document.querySelectorAll(DOMstrings.expensesPercLabel);
+
+      // For loop that will call out function on each index
+      var nodeListForEach = function (list, callback) {
+        for (var i = 0; i < list.length; i++) {
+          // Pass in parameters
+          callback(list[i], i);
+        }
+      };
+
+      // Will run our anonymous callback function on each item of fields
+      nodeListForEach(fields, function (current, index) {
+        // Change the html %
+        if (percentages[index] > 0) {
+          current.textContent = percentages[index] + '%';
+        } else {
+          current.textContent = '---';
+        }
+      });
+    },
 
     // Expose private DOMstrings to public through a method
     getDomStrings: function () {
@@ -276,8 +297,7 @@ var controller = (function (budgetCtrl, UICtrl) {
     var percentages = budgetCtrl.getPercentages();
 
     // 3. Update the UI with new percentages
-    console.log(percentages);
-    // UICtrl.displayPercentages(percentages);
+    UICtrl.displayPercentages(percentages);
   };
 
   // Add item function
