@@ -85,6 +85,44 @@
 // // console.log(c);
 
 // ##########################################################
+// Lecture # 106 Strings and template literals
+// **********************************************************
+
+// let firstName = 'John';
+// let lastName = 'Smith';
+// const yearOfBirth = 1990;
+// function calcAge(year) {
+//   return 2020 - year;
+// }
+
+// // ES5
+
+// console.log(
+//   'This is ' +
+//     firstName +
+//     ' ' +
+//     lastName +
+//     '. He was born in ' +
+//     yearOfBirth +
+//     '. So today he is ' +
+//     calcAge(yearOfBirth) +
+//     ' years old.'
+// );
+
+// // ES6
+// console.log(
+//   `This is ${firstName} ${lastName}. He was born in ${yearOfBirth}. So today he is ${calcAge(
+//     yearOfBirth
+//   )} years old.`
+// );
+
+// const n = `${firstName} ${lastName}`;
+// console.log(n.startsWith('J')); // case sensitive
+// console.log(n.endsWith('th')); // can be multiple characters
+// console.log(n.includes(' ')); // can be multiple characters
+// console.log(`${firstName} `.repeat(5));
+
+// ##########################################################
 // Lecture #
 // **********************************************************
 
