@@ -155,6 +155,95 @@
 // console.log(ages6c);
 
 // ##########################################################
+// Lecture # 108 Arrow Functions and lexical 'this'
+// **********************************************************
+
+// // ES5
+// var box5 = {
+//   color: 'green',
+//   position: 1,
+//   clickMe: function () {
+//     // bind this to object by setting variable equl to this and calling self instead
+//     var self = this;
+//     document.querySelector('.green').addEventListener('click', function () {
+//       var str =
+//         'This is box number ' + self.position + ' and it is ' + self.color;
+//       alert(str);
+//     });
+//   },
+// };
+
+// // Comes back undefined because only methods' this points back to object. The eventhandler function is not a method of the object so 'this' does not point to the object.
+// box5.clickMe();
+
+// // ES6
+// const box6 = {
+//   color: 'blue',
+//   position: 2,
+//   clickMe: function () {
+//     document.querySelector('.blue').addEventListener('click', () => {
+//       let str =
+//         'This is box number ' + this.position + ' and it is ' + this.color;
+//       alert(str);
+//     });
+//   },
+// };
+
+// // Using arrow function allows this to be bound to parent
+// box6.clickMe();
+
+// // If the method is made into an arrow function then the this points to its parent which is the global context. Will come back undefined again
+// const box66 = {
+//   color: 'blue',
+//   position: 2,
+//   // No longer has its own 'this' but points to the 'this of box66 which is the global scope
+//   clickMe: () => {
+//     document.querySelector('.blue').addEventListener('click', () => {
+//       let str =
+//         'This is box number ' + this.position + ' and it is ' + this.color;
+//       alert(str);
+//     });
+//   },
+// };
+// // box66.clickMe();
+
+// // ES5
+// // Function constructor
+// function Person(name) {
+//   this.name = name;
+// }
+
+// // Can also use call apply and bind to bind this
+// Person.prototype.myFriends5 = function (friends) {
+//   var arr = friends.map(
+//     function (el) {
+//       return this.name + ' is friends with ' + el;
+//     }.bind(this)
+//   );
+//   console.log(arr);
+// };
+
+// var friends = ['Bob', 'Jane', 'Mark'];
+
+// new Person('John').myFriends5(friends);
+
+// // ES6
+// // Function constructor
+// function Person(name) {
+//   this.name = name;
+// }
+
+// Person.prototype.myFriends6 = function (friends) {
+//   var arr = friends.map((el) => `${this.name} is friends with ${el}.`);
+//   console.log(arr);
+// };
+
+// var friends = ['Bob', 'Jane', 'Mark'];
+
+// new Person('John').myFriends6(friends);
+// // arrow functions do not have their own this and take parents
+
+// ##########################################################
 // Lecture #
 // **********************************************************
 
