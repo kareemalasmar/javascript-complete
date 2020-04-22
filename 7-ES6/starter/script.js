@@ -63,6 +63,28 @@
 // console.log(i);
 
 // ##########################################################
+// Lecture # 105 Blocks and IIFE
+// **********************************************************
+
+// {
+//   const a = 1;
+//   let b = 2;
+//   var c = 4;
+// }
+
+// console.log(c);
+// console.log(a + b);
+// // variables are private within the {} block aka block scope
+
+// // ES5 Using an IIFE to hide a var from outside scope
+
+// (function () {
+//   var c = 3;
+// })();
+
+// // console.log(c);
+
+// ##########################################################
 // Lecture #
 // **********************************************************
 
