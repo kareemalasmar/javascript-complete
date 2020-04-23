@@ -422,6 +422,58 @@
 // isFullAge6(5, 1990, 1999, 1965, 2015, 2007);
 
 // ##########################################################
+// Lecture # 113       Default Parameters
+// **********************************************************
+// Default Parameters: used when you want one or more parameters of a function to be pre-set
+
+// ES5
+// function SmithPerson(firstName, yearOfBirth, lastName, nationality) {
+//   // Ternary to define it if it doesnt exist
+//   lastName === undefined ? (lastName = 'Smith') : (lastName = lastName);
+//   nationality === undefined
+//     ? (nationality = 'american')
+//     : (nationality = nationality);
+
+//   this.firstName = firstName;
+//   this.lastName = lastName;
+//   this.yearOfBirth = yearOfBirth;
+//   this.nationality = nationality;
+// }
+
+// // Calling constructor without all parameters leaves them undefined
+
+// var john = new SmithPerson('John', 1990);
+// console.log(john);
+
+// var emily = new SmithPerson('Emily', 1992, 'Diaz', 'Spanish');
+// console.log(emily);
+
+// ES6
+
+// // You can set default values for parameters within the arguments ()
+// function SmithPerson(
+//   firstName,
+//   yearOfBirth,
+//   lastName = 'Smith',
+//   nationality = 'American'
+// ) {
+//   this.firstName = firstName;
+//   this.lastName = lastName;
+//   this.yearOfBirth = yearOfBirth;
+//   this.nationality = nationality;
+// }
+
+// var john = new SmithPerson('John', 1990);
+// console.log(john);
+
+// var emily = new SmithPerson('Emily', 1992, 'Diaz', 'Spanish');
+// console.log(emily);
+
+// ##########################################################
+// Lecture #
+// **********************************************************
+
+// ##########################################################
 // Lecture #
 // **********************************************************
 
