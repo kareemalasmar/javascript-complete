@@ -470,8 +470,50 @@
 // console.log(emily);
 
 // ##########################################################
-// Lecture #
+// Lecture # 114 Maps
 // **********************************************************
+// Maps can have anything for keys and values, are itterable, and you can easily get size, also because its easy to add and remove data from map
+
+// const question = new Map();
+// question.set(
+//   'question',
+//   'What is the official name of the latest major Javascript version?'
+// );
+// question.set(1, 'ES5');
+// question.set(2, 'ES6');
+// question.set(3, 'ES2015');
+// question.set(4, 'ES7');
+// question.set('correct', 3);
+// question.set(true, 'Correct answer :D');
+// question.set(false, 'Wrong, please try again.');
+
+// // console.log(question.get('question'));
+// // console.log(question.size);
+
+// // if (question.has(4)) {
+// //   question.delete(4);
+// //   console.log('Answer 4 is here');
+// // }
+
+// // question.clear();
+
+// // Looping through map
+// // question.forEach((value, key) =>
+// //   console.log(`This is ${key}, and it's set to ${value}`)
+// // );
+
+// for (let [key, value] of question.entries()) {
+//   //   console.log(`This is ${key}, and it's set to ${value}`);
+//   if (typeof key === 'number') {
+//     console.log(`Answer ${key}: ${value}`);
+//   }
+// }
+
+// const ans = parseInt(prompt('write the corect answer'));
+
+// // ans === question.get('answer') // will either be true or false
+
+// console.log(question.get(ans === question.get('correct')));
 
 // ##########################################################
 // Lecture #
