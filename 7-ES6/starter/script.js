@@ -631,9 +631,9 @@ It's a very small town, so right now there are only 3 parks and 4 streets. All p
 
 At an end-of-year meeting, your boss wants a final report with the following:
 1. Tree density of each park in the town (forumla: number of trees/park area) done
-2. Average age of each town's park (forumla: sum of all ages/number of parks)  outside
+2. Average age of each town's park (forumla: sum of all ages/number of parks)  done
 3. The name of the park that has more than 1000 trees  outside
-4. Total and average length of the town's streets  outside
+4. Total and average length of the town's streets  done
 5. Size classification of all streets: tiny/small/normal/big/huge. If the size is unknown, the default is normal done
 
 All the report data should be printed to the console.
@@ -657,11 +657,11 @@ class Street extends Element {
   }
   classifyStreet() {
     const classification = new Map();
-    classification.set(1, 'tiny');
-    classification.set(2, 'small');
-    classification.set(3, 'normal');
-    classification.set(4, 'big');
-    classification.set(5, 'huge');
+    classification.set(1, "tiny");
+    classification.set(2, "small");
+    classification.set(3, "normal");
+    classification.set(4, "big");
+    classification.set(5, "huge");
     console.log(
       `${this.name} is a ${classification.get(
         this.size
@@ -683,63 +683,51 @@ class Park extends Element {
 }
 
 const allParks = [
-  new Park('Marie Kerr', 1992, 200, 2000),
-  new Park('Goleta', 1980, 1200, 9000),
-  new Park('La jolla', 1976, 100, 4500),
+  new Park("Marie Kerr", 1992, 200, 2000),
+  new Park("Goleta", 1980, 1200, 9000),
+  new Park("La jolla", 1976, 100, 4500),
 ];
 const allStreets = [
-  new Street('Mahonia', 1984, 1000),
-  new Street('Sandstone', 1999, 1500),
-  new Street('Camino Pescadero', 1977, 2000, 4),
-  new Street('Decoro', 1990, 700, 1),
+  new Street("Mahonia", 1984, 1000),
+  new Street("Sandstone", 1999, 1500),
+  new Street("Camino Pescadero", 1977, 2000, 4),
+  new Street("Decoro", 1990, 700, 1),
 ];
 
-function parkAge(arr){
-    arr.
+function parkData(arr) {
+  let sum = 0;
+  let averageAge;
+  arr.forEach((park) => {
+    park.calcTreeDensity();
+    if (park.trees > 1000) {
+      console.log(
+        `${park.name} park has over 1000 trees with about ${park.trees} trees.`
+      );
+    }
+    sum += park.year;
+  });
+  averageAge = sum / arr.length;
+  console.log(
+    `The average age of the ${arr.length} parks is ${Math.round(averageAge)}`
+  );
 }
 
-// ##########################################################
-// Lecture # 114 Maps
-// **********************************************************
-// Maps can have anything for keys and values, are itterable, and you can easily get size, also because its easy to add and remove data from map
+function streetData(arr) {
+  let sum = 0;
+  let averageLength;
+  arr.forEach((street) => {
+    street.classifyStreet();
+    sum += street.length;
+  });
+  averageLength = sum / arr.length;
+  console.log(
+    `The sum of the ${arr.length} streets' lengths is ${sum} and the average length was ${averageLength}`
+  );
+}
 
-// const question = new Map();
-// question.set(
-//   'question',
-//   'What is the official name of the latest major Javascript version?'
-// );
-// question.set(1, 'ES5');
-// question.set(2, 'ES6');
-// question.set(3, 'ES2015');
-// question.set(4, 'ES7');
-// question.set('correct', 3);
-// question.set(true, 'Correct answer :D');
-// question.set(false, 'Wrong, please try again.');
+function makeReport() {
+  parkData(allParks);
+  streetData(allStreets);
+}
 
-// // console.log(question.get('question'));
-// // console.log(question.size);
-
-// // if (question.has(4)) {
-// //   question.delete(4);
-// //   console.log('Answer 4 is here');
-// // }
-
-// // question.clear();
-
-// // Looping through map
-// // question.forEach((value, key) =>
-// //   console.log(`This is ${key}, and it's set to ${value}`)
-// // );
-
-// for (let [key, value] of question.entries()) {
-//   //   console.log(`This is ${key}, and it's set to ${value}`);
-//   if (typeof key === 'number') {
-//     console.log(`Answer ${key}: ${value}`);
-//   }
-// }
-
-// const ans = parseInt(prompt('write the corect answer'));
-
-// // ans === question.get('answer') // will either be true or false
-
-// console.log(question.get(ans === question.get('correct')));
+makeReport();
