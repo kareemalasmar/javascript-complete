@@ -175,8 +175,16 @@
 // ) => console.log(`${result} is the best ever`));
 
 // ##########################################################
-// Lecture #
+// Lecture # 125    AJAX and API
 // **********************************************************
+
+// AJAX: Asynchronous Javascript And XML
+// is used to make and post to your database through the API
+
+// API: Application Programming Interface
+// A piece of software that is used by another piece of software.
+
+// You can use personal APIs and 3rd-party APIs
 
 // ##########################################################
 // Lecture #
