@@ -117,6 +117,64 @@
 //   });
 
 // ##########################################################
+// Lecture # 124 Async Await
+// **********************************************************
+
+// const getIDs = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve([523, 883, 432, 974]);
+//   }, 1500);
+// });
+
+// const getRecipe = (recID) => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(
+//       (ID) => {
+//         const recipe = {
+//           title: 'Fresh tomato pasta',
+//           publisher: 'Jonas',
+//         };
+//         resolve(`${ID}: ${recipe.title}`);
+//       },
+//       1500,
+//       recID
+//     );
+//   });
+// };
+
+// const getRelated = (publisher) => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(
+//       (pub) => {
+//         const recipe = {
+//           title: 'Italian pizza',
+//           publisher: 'Jonas Schmedtmann',
+//         };
+//         resolve(`${pub}: ${recipe.title}`);
+//       },
+//       1500,
+//       publisher
+//     );
+//   });
+// };
+
+// // Async/Await is a type of function that happens asyncronously. inside this function you cant more than one await expressions
+// async function getRecipesAW() {
+//   const IDs = await getIDs;
+//   console.log(IDs);
+//   const recipe = await getRecipe(IDs[2]);
+//   console.log(recipe);
+//   const related = await getRelated('Jonas Schmedtmann');
+//   console.log(related);
+
+//   return recipe;
+// }
+// // getRecipesAW(); // synchronously calls function to be ran in the background
+// getRecipesAW().then((
+//   result // can use the .then on async function to perform something only when it has finished
+// ) => console.log(`${result} is the best ever`));
+
+// ##########################################################
 // Lecture #
 // **********************************************************
 
