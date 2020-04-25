@@ -187,7 +187,37 @@
 // You can use personal APIs and 3rd-party APIs
 
 // ##########################################################
-// Lecture #
+// Lecture # 126  AJAX calls with Fetch and Promises
+// **********************************************************
+
+// // fetch('https://www.metaweather.com/api/location/2487956/'); This would create a "same source origin error" You can use https://cors-anywhere.herokuapp.com/ prefix to workaround
+// function getWeather(woeid) {
+//   fetch(
+//     // Example of consuming promise. Fetch automatically returns a promise without us having to write it.
+//     `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`
+//   )
+//     .then((result) => {
+//       console.log(result);
+//       return result.json();
+//       // Will return a 'Readable JSON stream in the body which still needs to be parsed into javascript
+//     })
+//     .then((data) => {
+//       //   console.log(data)
+//       const today = data.consolidated_weather[0];
+//       console.log(
+//         `Temperatures in ${data.title} stay between ${today.min_temp} and ${today.max_temp}`
+//       );
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+// }
+
+// getWeather(2487956);
+// getWeather(44418420);
+
+// ##########################################################
+// Lecture # 127  AJAX calls with Fetch and Async/Await
 // **********************************************************
 
 // ##########################################################
